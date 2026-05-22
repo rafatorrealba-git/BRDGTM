@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Performance Brief — Scenario 1: On Plan</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #f8f9fa;
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 3px solid #2563eb;
+        }
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            color: #1f2937;
+        }
+        .header p {
+            margin: 0;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .status-banner {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .status-banner .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .metric-card {
+            padding: 20px;
+            margin: 15px 20px;
+            background-color: #f9fafb;
+            border-left: 4px solid #2563eb;
+            border-radius: 4px;
+        }
+        .metric-card.green {
+            border-left-color: #10b981;
+        }
+        .metric-card.amber {
+            border-left-color: #f59e0b;
+        }
+        .metric-card.red {
+            border-left-color: #ef4444;
+        }
+        .metric-name {
+            font-size: 12px;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+        .metric-value {
+            font-size: 36px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        .metric-value.green { color: #10b981; }
+        .metric-value.amber { color: #f59e0b; }
+        .metric-value.red { color: #ef4444; }
+        .metric-detail {
+            font-size: 13px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+        .metric-detail .arrow {
+            font-weight: bold;
+            margin: 0 4px;
+        }
+        .arrow.up { color: #10b981; }
+        .arrow.down { color: #ef4444; }
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1f2937;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0 20px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border-top: 2px solid #e5e7eb;
+            padding-top: 15px;
+        }
+        .region-item {
+            padding: 12px 20px;
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .region-item:last-child {
+            border-bottom: none;
+        }
+        .region-name {
+            flex: 1;
+        }
+        .region-name .label {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .region-name .name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1f2937;
+        }
+        .region-metrics {
+            text-align: right;
+        }
+        .region-idx {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .region-idx.green { color: #10b981; }
+        .region-idx.amber { color: #f59e0b; }
+        .region-idx.red { color: #ef4444; }
+        .region-change {
+            font-size: 12px;
+            color: #6b7280;
+        }
+        .region-issue {
+            font-size: 11px;
+            color: #6b7280;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .cta-button {
+            display: block;
+            width: 300px;
+            margin: 30px auto;
+            padding: 14px 28px;
+            background-color: #2563eb;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .cta-button:hover {
+            background-color: #1d4ed8;
+        }
+        .footer {
+            background-color: #f3f4f6;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+        }
+        .footer p {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📊 Daily Performance Brief</h1>
+            <p>22 May 2026</p>
+        </div>
+
+        <!-- Status Banner -->
+        <div class="status-banner">
+            <div class="icon">🟢</div>
+            <div>TODAY: ON PLAN</div>
+        </div>
+
+        <!-- Metric 1: Total IDX -->
+        <div class="metric-card green">
+            <div class="metric-name">Total IDX (Orders vs. IBP Plan)</div>
+            <div class="metric-value green">102%</div>
+            <div class="metric-detail">
+                <strong>✓ ON PLAN</strong> | vs 21 May: <span class="arrow up">↑</span> +3 pts (99% → 102%) | 7-day avg: 100%
+            </div>
+        </div>
+
+        <!-- Metric 2: Del+PD IDX -->
+        <div class="metric-card amber">
+            <div class="metric-name">Delivered + Processed IDX (Execution Quality)</div>
+            <div class="metric-value amber">98%</div>
+            <div class="metric-detail">
+                <strong>⚠ AMBER (slightly below)</strong> | vs 21 May: <span class="arrow down">↓</span> -2 pts (100% → 98%) | 7-day avg: 99%
+            </div>
+        </div>
+
+        <!-- Metric 3: Pacing IDX -->
+        <div class="metric-card green">
+            <div class="metric-name">Monthly Pacing IDX (Tracking to Plan)</div>
+            <div class="metric-value green">98%</div>
+            <div class="metric-detail">
+                <strong>✓ ON PACE</strong> | 10 of 21 business days elapsed (48%) | Achieved 47% of monthly plan | Status: 1 day behind, recoverable by month-end
+            </div>
+        </div>
+
+        <!-- Regional Breakdown -->
+        <div class="section-title">Bottom 3 Regions by Total IDX</div>
+
+        <div class="region-item">
+            <div class="region-name">
+                <div class="label">🔴 1. NORTH REGION</div>
+                <div class="name">Total IDX: 94%</div>
+            </div>
+            <div class="region-metrics">
+                <div class="region-change"><span class="arrow down">↓</span> -4 pts (was 98%)</div>
+                <div class="region-issue">2 teams significantly below plan; pacing 92%</div>
+            </div>
+        </div>
+
+        <div class="region-item">
+            <div class="region-name">
+                <div class="label">🟡 2. EAST REGION</div>
+                <div class="name">Total IDX: 97%</div>
+            </div>
+            <div class="region-metrics">
+                <div class="region-change"><span class="arrow down">↓</span> -1 pt (was 98%)</div>
+                <div class="region-issue">Stable; on pace for month</div>
+            </div>
+        </div>
+
+        <div class="region-item">
+            <div class="region-name">
+                <div class="label">🟡 3. LATAM REGION</div>
+                <div class="name">Total IDX: 99%</div>
+            </div>
+            <div class="region-metrics">
+                <div class="region-change"><span class="arrow up">↑</span> +2 pts (was 97%)</div>
+                <div class="region-issue">Improving trend; watch tomorrow</div>
+            </div>
+        </div>
+
+        <!-- Top Performer -->
+        <div class="section-title">Top Performer</div>
+
+        <div class="region-item">
+            <div class="region-name">
+                <div class="label">🟢 TOP: SOUTH REGION</div>
+                <div class="name">Total IDX: 104%</div>
+            </div>
+            <div class="region-metrics">
+                <div class="region-change"><span class="arrow up">↑</span> +3 pts (was 101%)</div>
+                <div class="region-issue">Excellent execution; strong pacing</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="#" class="cta-button">View Full Dashboard →</a>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Daily Performance Analytics</strong></p>
+            <p>Questions? Contact the Analytics Team</p>
+            <p style="font-size: 11px; margin-top: 12px;">This is an automated email from the Analytical Layer. Do not reply to this message.</p>
+        </div>
+    </div>
+</body>
+</html>
